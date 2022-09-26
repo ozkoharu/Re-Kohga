@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { BaseButton } from '../../components/atoms/button/baseButton';
 import Link from 'next/link';
 import axios from 'axios';
+import { isNumber } from 'util';
+import CarMenu from '../CarMenu';
 
 
 //dummyApi
@@ -31,33 +33,37 @@ const WelcomePage = () => {
     const onClick = async () => {
         await axios.get(dummyUrl)
             .then(function (res) {
-                //数字か数字じゃないか
-                //数字だったら
-                if (isNaN(res.data.status) === true) {
-                    setflag(false);
+                //星くんここ適当なメッセージ返して
+                if (res.data.status === 'msg') {
+                    //setflag(false);
                 } else {
-                    setflag(true);
+                    //setflag(true);
                 }
                 console.log('res', res.data.status);
-                console.log('res判断', isNaN(JSON.parse(res.data.status)));
+
             })
             .catch((e) => {
                 console.log(e);
             })
     }
+    if (flag) {
+        return (
+            <CarMenu />
+        )
+    } else {
+        return (
+            <>
+                <Link href='../CarMenu/'>
+                    <BaseButton onClick={onClick} isSubmit={false}>
+                        車を使う
+                    </BaseButton>
+                </Link>
 
-    return (
-        <>
-            <Link href='../CarMenu/'>
-                <BaseButton onClick={onClick} isSubmit={false}>
-                    車を使う
+                <BaseButton onClick={onkanri} isSubmit={false}>
+                    車管理Maneger
                 </BaseButton>
-            </Link>
-
-            <BaseButton onClick={onkanri} isSubmit={false}>
-                車管理Maneger
-            </BaseButton>
-        </>
-    )
+            </>
+        )
+    }
 }
 export default WelcomePage;
