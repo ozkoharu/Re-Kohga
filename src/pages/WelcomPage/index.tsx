@@ -33,18 +33,17 @@ const WelcomePage = () => {
             .then(function (res) {
                 //数字か数字じゃないか
                 //数字だったら
-                if (isNaN(res.data.status) === false) {
+                if (isNaN(res.data.status) === true) {
                     setflag(false);
                 } else {
                     setflag(true);
                 }
                 console.log('res', res.data.status);
-                console.log('res判断', isNaN(res.data.status));
+                console.log('res判断', isNaN(JSON.parse(res.data.status)));
             })
             .catch((e) => {
                 console.log(e);
             })
-        console.log('ugoita');
     }
 
     return (
