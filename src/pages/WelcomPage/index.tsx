@@ -31,12 +31,7 @@ const WelcomePage = () => {
     const onClick = async () => {
         await axios.get(dummyUrl)
             .then((res) => {
-                if (isNaN(res.data.status) === false) {
-                    setflag(true);
-                    console.log('res', res.data);
-                } else {
-                    setflag(false);
-                }
+                console.log('res', res);
             })
             .catch((e) => {
                 console.log(e);
