@@ -19,8 +19,14 @@ a {
   html {
     color-scheme: dark;
   }
+
   body {
     color: white;
     background: black;
   }
+}
+
+.leaflet-container {
+  width: 100vw;
+  height: 100vh;
 }
