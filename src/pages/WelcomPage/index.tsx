@@ -39,13 +39,13 @@ const WelcomePage = () => {
                 } else {
                     //setflag(true);
                 }
-                setflag(true);
                 console.log('res', res.data.status);
 
             })
             .catch((e) => {
                 console.log(e);
             })
+        setflag(true);
     }
 
     if (flag) {
@@ -56,12 +56,9 @@ const WelcomePage = () => {
     } else {
         return (
             <>
-
                 <BaseButton onClick={onClick} isSubmit={false}>
                     車を使う
                 </BaseButton>
-
-
                 <BaseButton onClick={onkanri} isSubmit={false}>
                     車管理Maneger
                 </BaseButton>
