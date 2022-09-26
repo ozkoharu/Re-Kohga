@@ -46,8 +46,9 @@ const WelcomePage = () => {
                     車を使う
                 </BaseButton>
             </Link>
-            <BaseButton onClick={onClick} isSubmit={false} >aaaa</BaseButton>
-
+            <div>
+                <BaseButton onClick={onClick} isSubmit={false} >aaaa</BaseButton>
+            </div>
             <BaseButton onClick={onkanri} isSubmit={false}>
                 車管理Maneger
             </BaseButton>
