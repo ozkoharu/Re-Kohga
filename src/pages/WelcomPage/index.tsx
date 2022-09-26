@@ -46,20 +46,20 @@ const WelcomePage = () => {
                 console.log(e);
             })
     }
+
     if (flag) {
-        console.log('flag true')
         return (
             <CarMenu />
         )
+
     } else {
-        console.log('flag false');
         return (
             <>
-                <Link href='../CarMenu/'>
-                    <BaseButton onClick={onClick} isSubmit={false}>
-                        車を使う
-                    </BaseButton>
-                </Link>
+
+                <BaseButton onClick={onClick} isSubmit={false}>
+                    車を使う
+                </BaseButton>
+
 
                 <BaseButton onClick={onkanri} isSubmit={false}>
                     車管理Maneger
@@ -67,5 +67,6 @@ const WelcomePage = () => {
             </>
         )
     }
+
 }
 export default WelcomePage;
