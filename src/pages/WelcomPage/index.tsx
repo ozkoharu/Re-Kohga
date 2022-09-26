@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { BaseButton } from '../../components/atoms/button/baseButton';
 import Link from 'next/link';
 import axios from 'axios';
-import { AssertionError } from 'assert';
+
 
 //dummyApi
 const dummyUrl = 'http://saza.kohga.local:3000/dummyApi';
@@ -33,6 +33,7 @@ const onClick = () => {
         .catch((e) => {
             console.log(e);
         })
+    console.log('ugoita');
 }
 
 const onkanri = () => {
@@ -40,6 +41,7 @@ const onkanri = () => {
 }
 
 const WelcomePage = () => {
+
     return (
         <>
             <Link href='../CarMenu/'>
