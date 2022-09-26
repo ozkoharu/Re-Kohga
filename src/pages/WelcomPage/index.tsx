@@ -28,8 +28,8 @@ const onkanri = () => {
 const WelcomePage = () => {
     const [flag, setflag] = useState(false);
 
-    const onClick = () => {
-        axios.get(dummyUrl)
+    const onClick = async () => {
+        await axios.get(dummyUrl)
             .then((res) => {
                 if (isNaN(res.data) === false) {
                     setflag(true);
