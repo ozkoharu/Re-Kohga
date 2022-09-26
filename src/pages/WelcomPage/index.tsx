@@ -31,7 +31,15 @@ const WelcomePage = () => {
     const onClick = async () => {
         await axios.get(dummyUrl)
             .then(function (res) {
+                //数字か数字じゃないか
+                //数字だったら
+                if (isNaN(res.data.status) === false) {
+                    setflag(false);
+                } else {
+                    setflag(true);
+                }
                 console.log('res', res.data.status);
+                console.log('res判断', isNaN(res.data.status));
             })
             .catch((e) => {
                 console.log(e);
