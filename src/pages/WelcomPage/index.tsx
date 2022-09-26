@@ -1,6 +1,12 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { BaseButton } from '../../components/atoms/button/baseButton';
 import Link from 'next/link';
+import axios from 'axios';
+import { AssertionError } from 'assert';
+
+//dummyApi
+const dummyUrl = 'http://saza.kohga.local:3000/dummyApi';
+
 
 const PopupTrue = () => {
     //成功した時のポップアップウィンドウを出す
@@ -13,12 +19,22 @@ const axiosPost = () => {
     //星くんにPOSTをとばしてmsgを受信する
     //車が確保できたらPopup
 }
-
 const onClick = () => {
-    //ここでクリックをおしたときに星くんに車確保のお願いをする
-    //msgを送信してそのreturnをみてポップアップを出したり出さなかったりする
-
+    const [flag, setflag] = useState(false);
+    axios.get(dummyUrl)
+        .then((res) => {
+            if (isNaN(res.data) === false) {
+                setflag(true);
+                console.log('res', res.data);
+            } else {
+                setflag(false);
+            }
+        })
+        .catch((e) => {
+            console.log(e);
+        })
 }
+
 const onkanri = () => {
 
 }
