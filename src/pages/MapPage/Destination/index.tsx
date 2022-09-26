@@ -12,7 +12,7 @@ import axios from "axios";
 //ここをクソデカSPAにしてtakatomoAPIのresを受け取って
 //resの中身を表示
 
-const takatomoUrl = 'http://saza.kohga.local:3000/api/notNotAstar';
+const takatomoUrl = 'http://saza.kohga.local:3000/Astar';
 
 export const LocationPoint = createContext({} as {
     point: LatLng[]
