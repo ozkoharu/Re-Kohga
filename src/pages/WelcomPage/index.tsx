@@ -31,7 +31,7 @@ const WelcomePage = () => {
     const onClick = async () => {
         await axios.get(dummyUrl)
             .then(function (res) {
-                console.log('res', res.data.status);
+                console.log('res', res);
             })
             .catch((e) => {
                 console.log(e);
