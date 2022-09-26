@@ -47,10 +47,12 @@ const WelcomePage = () => {
             })
     }
     if (flag) {
+        console.log('flag true')
         return (
             <CarMenu />
         )
     } else {
+        console.log('flag false');
         return (
             <>
                 <Link href='../CarMenu/'>
