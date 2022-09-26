@@ -31,7 +31,7 @@ const WelcomePage = () => {
     const onClick = async () => {
         await axios.get(dummyUrl)
             .then(function (res) {
-                console.log('res', res);
+                console.log('res', res.data.status);
             })
             .catch((e) => {
                 console.log(e);
@@ -46,9 +46,7 @@ const WelcomePage = () => {
                     車を使う
                 </BaseButton>
             </Link>
-            <div>
-                <BaseButton onClick={onClick} isSubmit={false} >aaaa</BaseButton>
-            </div>
+
             <BaseButton onClick={onkanri} isSubmit={false}>
                 車管理Maneger
             </BaseButton>
