@@ -28,8 +28,8 @@ const onkanri = () => {
 const WelcomePage = () => {
     const [flag, setflag] = useState(false);
 
-    const onClick = async () => {
-        await axios.get(dummyUrl)
+    const onClick = () => {
+        axios.get(dummyUrl)
             .then(function (res) {
                 console.log('res', res);
             })
