@@ -39,6 +39,7 @@ const WelcomePage = () => {
                 } else {
                     //setflag(true);
                 }
+                setflag(true);
                 console.log('res', res.data.status);
 
             })
